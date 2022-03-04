@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 9</title>
+</head>
+<body>
+    <h1>0 és 255 közötti számoknak megfelelő karakterek kiíratása</h1>
+    <p id="eredmeny"></p>
+    <script type="text/javascript">
+        function szam_ascii_konverzio() {
+            let karakterek = [];
+            let karakter;
+            for (var i = 0; i != 255; i++) 
+            {   
+                let karakter = String.fromCharCode(i);
+                karakterek.push(karakter);
+            }
+            document.getElementById("eredmeny").textContent = karakterek;
+        }
+        window.onload = szam_ascii_konverzio;
+    </script>
+</body>
+</html>

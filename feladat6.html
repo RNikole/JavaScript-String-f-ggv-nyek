@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 6</title>
+</head>
+<body>
+    <h1>Szövegben szó keresés</h1>
+    <form name="szovegben_szo" method="POST">
+        <label for="user_text">Adjon meg egy minimum 30 karakterből álló szöveget:</label>
+        <input id="user_text" type="text"name="user_text">
+        <br><br>
+        <label for="user_word">Adjon meg egy szót:</label>
+        <input id="user_word" type="text"name="user_word">
+        <br><br>
+        <button id="szo_kereses" type="button">Szó keresése a szövegben</button>
+    </form>
+    <script type="text/javascript">
+        document.getElementById('szo_kereses').addEventListener('click', () => {
+        let user_text = document.forms['szovegben_szo']['user_text'].value;
+        let user_word = document.forms['szovegben_szo']['user_word'].value;
+        let minden_kitoltve = true;
+        if (user_text === '') {
+            minden_kitoltve = false;
+            alert('Kötelező szöveget megadni!')
+        }
+        if (user_text.length < 30 ) {
+            minden_kitoltve = false;
+            alert('Mininum 30 karakterből kell állnia a szövegnek!')
+        }
+        if (user_word === '') {
+            minden_kitoltve = false;
+            alert('Kötelező keresendő szót megadni!')
+        }
+        if (minden_kitoltve) {
+            if (user_text.includes(user_word)) {
+                alert('Szerepel az adott szó a keresett szövegben!');
+            } else {
+                alert('Az adott szó nem szerepel a keresett szövegben!');
+            }
+        }
+    }); 
+    </script>
+</body>
+</html>

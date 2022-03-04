@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 2</title>
+</head>
+<body>
+    <h1>Név bekérés</h1>
+    <form name="nev_bekeres" method="POST">
+        <label for="vezeteknev">Adja meg a vezetéknevét:</label>
+        <input id="vezeteknev" type="text" name="vezeteknev">
+        <br><br>
+        <label for="keresztnev">Adja meg a keresztnevét:</label>
+        <input id="keresztnev" type="text"name="keresztnev">
+        <br><br>
+        <button id="teljes_nev" type="button">Teljes név kiíratása</button>
+    </form>
+    <script type="text/javascript">
+        document.getElementById('teljes_nev').addEventListener('click', () => {
+        let vezeteknev = document.forms['nev_bekeres']['vezeteknev'].value;
+        let keresztnev = document.forms['nev_bekeres']['keresztnev'].value;
+        let teljes_neve = vezeteknev + " " + keresztnev
+        let minden_kitoltve = true;
+        if (vezeteknev === '') {
+            minden_kitoltve = false;
+            alert('Kötelező vezetéknevet megadni!')
+        }
+        if (keresztnev === '') {
+            minden_kitoltve = false;
+            alert('Kötelező vezetéknevet megadni!')
+        }
+        if (minden_kitoltve) {
+           alert("Az Ön teljes neve: " + teljes_neve);      
+        }
+    }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 3</title>
+</head>
+<body>
+    <h1>Szöveg kisbetűsre alakítása</h1>
+    <form name="szoveg_kisbetusre" method="POST">
+        <label for="user_text">Adjon meg egy szöveget:</label>
+        <input id="user_text" type="text" name="user_text">
+        <br><br>
+        <button id="szoveg_atalakitas" type="button">Szöveg átalakítása kisbetűsre</button>
+    </form> 
+    <p id="eredmeny"></p>
+    <script type="text/javascript">
+        document.getElementById('szoveg_atalakitas').addEventListener('click', () => {
+        let user_text = document.forms['szoveg_kisbetusre']['user_text'].value;
+        let minden_kitoltve = true;
+        if (user_text === '') {
+            minden_kitoltve = false;
+            alert('Kötelező szöveget megadni!')
+        }
+        if (minden_kitoltve) {
+            document.getElementById("eredmeny").textContent = "A megadott szöveg kisbetűsre alakítva: " + user_text.toLowerCase();         
+        }
+    }); 
+    </script>
+</body>
+</html>
